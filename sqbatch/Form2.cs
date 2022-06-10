@@ -44,7 +44,7 @@ namespace sqbatch
                 {
                     while (drr.Read()) // read data from dr object
                     {
-                        textname.Text = drr["courcename"].ToString();
+                        textname.Text = drr["coursename"].ToString();
                         textfees.Text = drr["fees"].ToString();
                     }
                 }
@@ -100,7 +100,7 @@ namespace sqbatch
             try
             {
                 // @id, @name,@salary are the variable names
-                string str = "update courseinfo set courcename=@name,fees=@fees where courseid=@id";
+                string str = "update courseinfo set coursename=@name,fees=@fees where courseid=@id";
                 cmdd = new SqlCommand(str, conn);
                 cmdd.Parameters.AddWithValue("@id", Convert.ToInt32(textid.Text));
                 cmdd.Parameters.AddWithValue("@name", textname.Text);
